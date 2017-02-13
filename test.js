@@ -53,3 +53,31 @@
 $('li').click(function(){
 	$(this).toggleClass("completed");
 });
+
+// //event bubbling
+// $('span').click(function(){
+// 	alert("click span");
+// });
+// $('ul').click(function(){
+// 	alert("click ul");
+// });
+// $('#container').click(function(){
+// 	alert("click container");
+// });
+// $('body').click(function(){
+// 	alert("click body");
+// });
+
+// //prevent event bubbling
+// $('span').click(function(event){
+// 	alert("click span");
+// 	event.stopPropagation();
+// });
+
+//remove todoList on X click
+$('span').click(function(event){
+	$(this).parent().fadeOut(500,function(){
+		$(this).remove();
+	});
+	event.stopPropagation();
+});
