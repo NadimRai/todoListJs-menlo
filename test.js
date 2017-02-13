@@ -50,9 +50,9 @@
 // });
 
 //strike line-through toggle with class
-$('li').click(function(){
-	$(this).toggleClass("completed");
-});
+// $('li').click(function(){
+// 	$(this).toggleClass("completed");
+// });
 
 // //event bubbling
 // $('span').click(function(){
@@ -75,9 +75,41 @@ $('li').click(function(){
 // });
 
 //remove todoList on X click
-$('span').click(function(event){
+// $('span').click(function(event){
+// 	$(this).parent().fadeOut(500,function(){
+// 		$(this).remove();
+// 	});
+// 	event.stopPropagation();
+// });
+
+// add todo list by adding listener to input
+// $("input[type='text']").keypress(function(event){
+// 	if(event.which ===13){
+// 		var todoText = $(this).val();
+// 		$(this).val("");
+// 		$("ul").append("<li><span>X</span> " + todoText + "</li>");
+// 	}
+// });
+//this code will work only on existing elements i.e add listeners to existing elements only
+// click works only on existing elements only where as on works on all future elements
+
+
+$('ul').on("click", "li", function(){
+		$(this).toggleClass("completed");
+});
+
+$('ul').on("click", "span",function(event){
 	$(this).parent().fadeOut(500,function(){
 		$(this).remove();
 	});
 	event.stopPropagation();
 });
+
+$("input[type='text']").keypress(function(event){
+	if(event.which ===13){
+		var todoText = $(this).val();
+		$(this).val("");
+		$("ul").append("<li><span>X</span> " + todoText + "</li>");
+	}
+});
+
