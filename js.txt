@@ -93,6 +93,7 @@ $("input[type='text']").keypress(function(event){
 this code will work only on existing elements i.e add listeners to existing elements only
 click works only on existing elements only where as on works on all future elements
 
+Final code: 
 
 $('ul').on("click", "li", function(){
 		$(this).toggleClass("completed");
