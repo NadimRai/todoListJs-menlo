@@ -34,17 +34,22 @@
 // });
 
 // strike line-through toggle color
+// $('li').click(function(){
+// 	console.log($(this).css("color"));
+// 	if($(this).css("color") === "rgb(255, 0, 0)"){
+// 		$(this).css({
+// 			color: "black",
+// 			textDecoration: "none"
+// 		});
+// 	}else{
+// 		$(this).css({
+// 			color: "red",
+// 			textDecoration: "line-through"
+// 		});
+// 	}
+// });
+
+//strike line-through toggle with class
 $('li').click(function(){
-	console.log($(this).css("color"));
-	if($(this).css("color") === "rgb(255, 0, 0)"){
-		$(this).css({
-			color: "black",
-			textDecoration: "none"
-		});
-	}else{
-		$(this).css({
-			color: "red",
-			textDecoration: "line-through"
-		});
-	}
+	$(this).toggleClass("completed");
 });
